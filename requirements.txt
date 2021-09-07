@@ -1,6 +1,6 @@
 ipykernel==5.1.2
 pydeck
-tensorflow==2.5.0
+tensorflow==2.6.0
 streamlit==0.85.1
 pillow
 pandas
