@@ -27,13 +27,15 @@ from PIL import Image, ImageOps
 import urllib.request
 import urllib.error
 
+cat_list = ['Ang Ku Kueh', 'Chee Cheong Fun', 'Chee Kueh', 'Crab Bee Hoon', 'Dendang Paru', 'Dosa', 'Frog Leg Porridge', 'Gado gado', 'Goreng Pisang', 'Green Bean Soup', 'Gulai Daun Ubi', 'Hainanese Curry Rice', 'Hor Fun', 'Kaya Toast 2', 'Mee Goreng', 'Meepok', 'Pecel_Lele', 'Prawn noodle - Soup', 'Putu Piring', 'Rawon', 'Roti_Prata', 'Sambal Kangkung', 'Sambal_Lala', 'Shao Mai', 'Singapore_Sling', 'Steamed Yam Cake', 'Sweet and Sour Fish', 'Tau Huay', 'Tumpeng', 'Vegetarian_Beehoon', 'Wanton Mee - Dry', 'Wanton Mee - Soup ']
+
 
 st.title("""
 This model classifies Singaporean Food.
 """)
 
 st.sidebar.header('Categories')
-st.sidebar.write(['Ang Ku Kueh', 'Chee Cheong Fun', 'Dendang Paru', 'Dosa', 'Frog Leg Porridge', 'Goreng Pisang', 'Green Bean Soup', 'Gulai Daun Ubi', 'Hainanese Curry Rice', 'Hor Fun', 'Mee Goreng', 'Meepok', 'Pecel_Lele', 'Prawn noodle (soup)', 'Rawon', 'Roti_Prata', 'Sambal_Lala', 'Shao Mai', 'Singapore_Sling', 'Steamed Yam Cake', 'Tau Huay', 'Tumpeng', 'Vegetarian_Beehoon', 'Wanton Mee (Soup)', 'Wanton Mee (dry)', 'crab bee hoon'])
+st.sidebar.write(cat_list)
 
 # st.sidebar.markdown("""
 # ["Carrot Cake","Char Kway Teow",  "Mee Siam", "Roti Prata"]
@@ -82,6 +84,5 @@ if uploaded_file is not None:
 
     classes_sg = np.argmax(predictions_sg, axis = 1)
 
-    cat_list = ['Ang Ku Kueh', 'Chee Cheong Fun', 'Dendang Paru', 'Dosa', 'Frog Leg Porridge', 'Goreng Pisang', 'Green Bean Soup', 'Gulai Daun Ubi', 'Hainanese Curry Rice', 'Hor Fun', 'Mee Goreng', 'Meepok', 'Pecel_Lele', 'Prawn noodle (soup)', 'Rawon', 'Roti_Prata', 'Sambal_Lala', 'Shao Mai', 'Singapore_Sling', 'Steamed Yam Cake', 'Tau Huay', 'Tumpeng', 'Vegetarian_Beehoon', 'Wanton Mee (Soup)', 'Wanton Mee (dry)', 'crab bee hoon']
-
+    
     st.header(cat_list[int(classes_sg)])
